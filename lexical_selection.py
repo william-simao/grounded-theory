@@ -24,6 +24,7 @@ def df_idf():
     from sklearn.feature_extraction.text import TfidfVectorizer
     df = pd.read_csv(f'Output/1-datastructure-{origin}.csv')
 
+    # check language
     tr_idf_model = TfidfVectorizer(stop_words='english', tokenizer=tokenize_and_clean)
     tf_idf_vector = tr_idf_model.fit_transform(df['html'].values.astype('U'))
 
